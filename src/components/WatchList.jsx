@@ -16,7 +16,7 @@ const WatchList = () => {
 
   const fetchMovieDetails = async (imdbID) => {
     try {
-      const response = await axios.get(`https://www.omdbapi.com/?i=${imdbID}&apikey=d5a5a1ab`);
+      const response = await axios.get(`https://www.omdbapi.com/?i=${imdbID}&apikey=${import.meta.env.VITE_API_KEY_OMDB}`);
       return response.data;
     } catch (error) {
       console.error('Error fetching movie details:', error);
